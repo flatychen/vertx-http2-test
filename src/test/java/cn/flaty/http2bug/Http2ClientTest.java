@@ -37,12 +37,12 @@ public class Http2ClientTest {
         8080,
         "127.0.0.1",
         "",
-        ar -> {
+        asyncResult -> {
           log.info("vertx client handler start! ");
-          if (ar.succeeded()) {
+          if (asyncResult.succeeded()) {
             log.info("connect success");
           }else {
-            log.error("connect fail",ar.cause());
+            log.error("connect fail",asyncResult.cause());
           }
           countDownLatch.countDown();
         });
