@@ -20,10 +20,10 @@ public class Http2ClientTest {
   public void before() {
     HttpClientOptions httpClientOptions = new HttpClientOptions();
     httpClientOptions.setProtocolVersion(HttpVersion.HTTP_2);
+    // if comment this line or set setHttp2ClearTextUpgrade to true , it will be ok
     httpClientOptions.setHttp2ClearTextUpgrade(false);
     httpClientOptions.setConnectTimeout(2000);
     httpClientOptions.setIdleTimeoutUnit(TimeUnit.SECONDS);
-
     client = Vertx.vertx().createHttpClient(httpClientOptions);
   }
 

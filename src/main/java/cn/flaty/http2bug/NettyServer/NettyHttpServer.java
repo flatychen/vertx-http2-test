@@ -11,17 +11,14 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.IOException;
-
 @Slf4j
 public class NettyHttpServer {
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args){
     new NettyHttpServer().startServer();
-    System.in.read();
   }
 
-  public void startServer() throws IOException {
+  public void startServer()  {
     final EventLoopGroup bossGroup = new NioEventLoopGroup(1);
     final EventLoopGroup workerGroup = new NioEventLoopGroup(1);
     ServerBootstrap b = new ServerBootstrap();
